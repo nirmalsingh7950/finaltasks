@@ -1,0 +1,23 @@
+version: '3'
+services:
+  website:
+    container_name: php72-container-8080
+    build: .
+    ports:
+      - 8080:80
+    depends_on:
+      - mysql
+    stdin_open: true
+    tty: true
+  mysql:
+        image: mysql
+        container_name: mysql-container-3306
+        restart: always
+        environment:
+          MYSQL_DATABASE: my_note
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 
+          MYSQL_ROOT_PASSWORD: test
+        ports:
+          - "3306:3306"
+ 
