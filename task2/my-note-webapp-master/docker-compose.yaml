@@ -32,8 +32,8 @@ services:
 #      - MYSQL_HOST=localhost
 #    ports:
 #      - "30002:3306"
-#    volumes:
-#      -.:/var/www/html
+    volumes:
+       - /home/nirmalsingh/Documents/mysql-data-dir:/var/lib/mysql
     networks:
       - backend
   phpmyadmin:
